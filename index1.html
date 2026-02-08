@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Course Feedback System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header>
+    <h1>University of global village</h1>
+  
+  </header>
+
+  <nav class="tabs">
+    <button onclick="showSection('student')">Student</button>
+    <button onclick="showSection('teacher')">Teacher</button>
+    <button onclick="showSection('admin')">Admin</button>
+  </nav>
+
+  <main>
+    <!-- Student Section -->
+    <section id="student" class="section">
+      <h2>Submit Feedback</h2>
+      <input type="text" id="studentName" placeholder="Your Name">
+      <select id="studentCourse">
+        <option value="">Select Course</option>
+        <option>Data Structures</option>
+        <option>Algorithms</option>
+        <option>Database Systems</option>
+        <option>Operating Systems</option>
+        <option>Computer Networks</option>
+      </select>
+      <body>
+      
+        <div class="logo-container">
+          <img src="logo.png" alt="UGV Logo">
+        </div>
+
+
+      <div class="star-rating">
+        <label>Rating:</label>
+        <span class="stars">
+          <span data-value="1">&#9733;</span>
+          <span data-value="2">&#9733;</span>
+          <span data-value="3">&#9733;</span>
+          <span data-value="4">&#9733;</span>
+          <span data-value="5">&#9733;</span>
+        </span>
+      </div>
+
+      <textarea id="studentComment" placeholder="Write your feedback"></textarea>
+      <button onclick="addFeedback()">Submit Feedback</button>
+    </section>
+
+    <!-- Teacher Section -->
+    <section id="teacher" class="section">
+      <h2>Teacher Feedback Summary</h2>
+      <select id="filterCourse" onchange="displayTeacherFeedback()">
+        <option value="">All Courses</option>
+        <option>Data Structures</option>
+        <option>Algorithms</option>
+        <option>Database Systems</option>
+        <option>Operating Systems</option>
+        <option>Computer Networks</option>
+      </select>
+      <div id="teacherFeedbackContainer" class="feedback-cards"></div>
+    </section>
+
+    <!-- Admin Section -->
+    <section id="admin" class="section">
+      <h2>Admin Panel</h2>
+      <button onclick="clearAllFeedback()">Clear All Feedback</button>
+      <p><em>Warning: This will delete all stored feedback permanently.</em></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy;University Course Feedback System</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
